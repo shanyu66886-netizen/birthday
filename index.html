@@ -1,0 +1,200 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, user-scalable=no" />
+  <meta name="theme-color" content="#e72c2b" />
+  <meta name="description" content="婷少、丁总、亨总，请接收一份重量级邀请：本周日中午，徽菜品鉴大会暨我的生日宴会！" />
+  <meta property="og:title" content="我过生日！三位贵宾请速速入席" />
+  <meta property="og:description" content="诚邀婷少、丁总、亨总 · 11月22日中午 · 徽菜品鉴大会暨生日宴会" />
+  <meta property="og:type" content="website" />
+  <title>我过生日！｜徽菜品鉴大会特邀函</title>
+  <style>
+    :root{--cherry:#ef222e;--deep:#16132b;--gold:#ffd665;--cream:#fff5dc;--blue:#394fca;--hotpink:#ff8a9a;--ink:#20141b}
+    *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+    html{scroll-behavior:smooth} body{margin:0;background:#101127;color:var(--cream);font-family:"PingFang SC","Microsoft YaHei",system-ui,-apple-system,sans-serif;overflow-x:hidden}
+    button{font:inherit;cursor:pointer} button:focus-visible{outline:3px solid white;outline-offset:4px}
+    .page{max-width:520px;min-height:100svh;margin:auto;position:relative;overflow:hidden;background:#19162e;isolation:isolate}
+    .page:before{content:"";position:fixed;inset:0;margin:auto;max-width:520px;z-index:90;pointer-events:none;box-shadow:inset 0 0 30px #160f2855}
+    .sky{position:absolute;inset:0;background:radial-gradient(ellipse 85% 48% at 53% 37%,#c03675 0%,#662578 38%,#20215b 77%,#141530 100%);z-index:-3}
+    .sky:after{content:"";position:absolute;inset:0;background:repeating-conic-gradient(from 35deg at 48% 44%,#ffffff0a 0deg 12deg,transparent 12deg 29deg);opacity:.7}
+    .grain{position:absolute;inset:0;pointer-events:none;z-index:10;opacity:.09;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.82' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.65'/%3E%3C/svg%3E")}
+    .petal-layer{position:fixed;inset:0;max-width:520px;margin:auto;pointer-events:none;overflow:hidden;z-index:35}
+    .petal{position:absolute;top:-28vh;left:var(--x);width:var(--size);height:calc(var(--size)*.87);opacity:var(--opacity);animation:petal-fall var(--dur) linear var(--delay) infinite;transform-origin:40% 50%;filter:drop-shadow(2px 7px 4px #43041a55)}
+    .petal svg{display:block;width:100%;height:100%;animation:petal-flip 4s ease-in-out infinite alternate}
+    @keyframes petal-fall{0%{transform:translate3d(0,-18vh,0) rotate(-65deg)}25%{transform:translate3d(9vw,25vh,0) rotate(85deg)}50%{transform:translate3d(-10vw,60vh,0) rotate(180deg)}75%{transform:translate3d(11vw,94vh,0) rotate(270deg)}100%{transform:translate3d(-5vw,144vh,0) rotate(390deg)}}
+    @keyframes petal-flip{from{scale:1 .84}to{scale:.81 1.13}}
+    .music{position:fixed;top:calc(env(safe-area-inset-top) + 18px);right:max(calc((100vw - 520px)/2 + 18px),18px);z-index:80;border:1px solid #ffdf8f80;background:#36162acc;backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);color:#fff7e5;display:flex;gap:9px;align-items:center;padding:9px 13px;border-radius:40px;box-shadow:0 6px 22px #210e21aa;font-size:12px}
+    .music-disc{display:grid;place-items:center;width:25px;height:25px;border:1px solid #fff8c0;border-radius:50%;background:#e32936;font-size:15px}
+    .music.is-playing .music-disc{animation:spin 3s linear infinite}
+    @keyframes spin{to{transform:rotate(360deg)}}
+    .cover{position:relative;min-height:100svh;min-height:100dvh;overflow:hidden;display:flex;flex-direction:column;justify-content:space-between;padding:calc(env(safe-area-inset-top) + 32px) 23px calc(env(safe-area-inset-bottom) + 24px)}
+    .cover:before{content:"";position:absolute;width:100%;height:42%;top:19%;left:0;background:radial-gradient(ellipse at center,#fc648a70 0,transparent 64%);pointer-events:none}
+    .flare{position:absolute;left:50%;top:38%;width:720px;height:720px;margin-left:-360px;margin-top:-360px;border-radius:50%;background:repeating-conic-gradient(from 8deg,#ffffff12 0deg 13deg,transparent 13deg 24deg);mix-blend-mode:screen;animation:spin 36s linear infinite;pointer-events:none}
+    .cover-top{position:relative;z-index:5;line-height:1.35}
+    .strap{display:inline-block;transform:rotate(-3deg);padding:5px 10px;background:#e82e32;color:#fff7cf;border:2px solid #fff1b5;box-shadow:4px 5px 0 #2b194b;font-size:11px;font-weight:900;letter-spacing:2px}
+    .serial{margin-top:17px;font-size:11px;letter-spacing:3px;color:#ffe9b0;font-weight:700;text-transform:uppercase;opacity:.95}
+    .major-title{position:relative;z-index:7;margin:6px 0 0;line-height:.86;letter-spacing:-7px;transform:rotate(-6deg);font-size:clamp(68px,17vw,108px);font-weight:1000;color:#ffedb0;-webkit-text-stroke:2.1px #af152e;text-shadow:3px 4px 0 #f82632,7px 10px 0 #621846,12px 17px 20px #0f0b2999}
+    .major-title span{display:block}.major-title span:last-child{margin-left:53px;margin-top:6px}
+    .birthday-burst{position:absolute;width:115px;height:115px;right:12px;top:140px;z-index:3;display:grid;place-items:center;background:#f7d34f;color:#d62b38;clip-path:polygon(50% 0,61% 23%,84% 7%,79% 35%,100% 45%,76% 58%,91% 84%,63% 77%,50% 100%,37% 76%,7% 86%,24% 58%,0 43%,26% 34%,17% 7%,40% 22%);transform:rotate(14deg);font-weight:1000;line-height:1.15;text-align:center;font-size:19px;filter:drop-shadow(0 8px 8px #0005);animation:burst 3s ease-in-out infinite}
+    @keyframes burst{0%,100%{transform:rotate(12deg) scale(1)}50%{transform:rotate(18deg) scale(1.08)}}
+    .hero-zone{position:absolute;z-index:4;top:30%;left:-22%;width:138%;height:auto;pointer-events:none;animation:heroFloat 4.2s ease-in-out infinite;filter:drop-shadow(5px 14px 6px #0008) drop-shadow(0 0 18px #f7d67a88)}
+    .hero-zone img{display:block;width:100%;height:auto}
+    @keyframes heroFloat{0%,100%{transform:translateY(-4px) rotate(-4deg)}50%{transform:translateY(11px) rotate(-1deg)}}
+    .vertical{position:absolute;right:6px;top:50%;writing-mode:vertical-rl;font-size:9px;letter-spacing:4px;opacity:.72;font-weight:800;color:#fff5d7;z-index:5}
+    .cover-bottom{z-index:8;position:relative;margin-top:auto;padding-top:43vh}
+    .vip{font-weight:950;text-align:center;color:#7f112a;background:#fff1cf;transform:rotate(-2deg);border:3px solid #d92136;padding:12px 7px 11px;font-size:clamp(22px,6.5vw,33px);box-shadow:7px 7px 0 #e62f48,12px 12px 0 #2b1841;letter-spacing:1px}
+    .vip small{display:block;font-size:11px;color:#ca3c47;letter-spacing:5px;margin-bottom:4px}
+    .cover-caption{position:relative;text-align:center;margin:26px 0 8px;color:#fff1d4;font-size:13px;line-height:1.6;letter-spacing:1px;text-shadow:0 2px 6px #1a0b37}
+    .cover-caption strong{color:#ffe776;font-size:16px}
+    .scroll-cta{margin:12px auto 0;border:0;display:flex;align-items:center;justify-content:center;gap:10px;padding:10px 19px;background:#fbe06b;color:#3c193e;font-size:13px;font-weight:1000;border-radius:99px;box-shadow:0 5px 0 #c9303f,0 10px 20px #0006;animation:bounce 2s infinite}
+    @keyframes bounce{0%,100%{translate:0 0}50%{translate:0 5px}}
+    .detail{position:relative;z-index:2;background:var(--cream);color:var(--ink);padding:58px 25px 90px;min-height:90svh;border-top:9px solid #e52937;clip-path:polygon(0 0,100% 0,100% 100%,0 100%)}
+    .detail:before{content:"";position:absolute;width:460px;height:460px;left:-140px;top:50px;border:24px double #f6b0b022;border-radius:50%;pointer-events:none}
+    .detail:after{content:"";position:absolute;inset:0;background:repeating-linear-gradient(135deg,transparent 0 29px,#f2cead1c 29px 30px);pointer-events:none}
+    .detail>*{position:relative;z-index:2}
+    .stamp{display:inline-block;background:#e92939;color:#fff4da;border:2px solid #e92939;outline:2px solid #e92939;outline-offset:3px;padding:8px 12px;font-size:12px;font-weight:950;letter-spacing:5px;transform:rotate(-5deg)}
+    .detail h2{font-size:clamp(35px,10vw,56px);line-height:1.12;letter-spacing:-1.2px;margin:36px 0 24px;color:#ba2436;font-weight:1000;text-shadow:3px 3px 0 #e8b86b}
+    .detail h2 em{color:#28234f;font-style:normal}
+    .intro{font-size:16px;line-height:2.05;letter-spacing:.4px;margin:20px 0;color:#51413e}
+    .intro strong{color:#bc1e35;text-decoration:underline wavy #ffc67b;text-underline-offset:5px}
+    .detail-divider{height:2px;background:repeating-linear-gradient(90deg,#d52f39 0 12px,transparent 12px 21px);margin:27px 0}
+    .event-card{position:relative;border:2px solid #3a2847;border-radius:4px;background:#fffef8;padding:25px 19px 21px;box-shadow:9px 9px 0 #e8ab7e}
+    .event-card:before{content:"✦";position:absolute;right:10px;top:4px;font-size:38px;color:#db383a}
+    .card-kicker{font-size:11px;letter-spacing:3px;color:#bd3640;font-weight:950}
+    .event-card h3{font-size:clamp(24px,6.9vw,36px);line-height:1.4;color:#242047;margin:13px 0 22px;font-weight:1000}
+    .event-card h3 span{color:#d12f40}
+    .info-row{border-top:1px solid #e9d7c5;padding:16px 0 0;display:flex;gap:13px;align-items:flex-start}
+    .info-row + .info-row{margin-top:16px}
+    .info-label{font-size:11px;background:#35294a;color:white;font-weight:800;padding:6px 8px;min-width:58px;text-align:center;white-space:nowrap}
+    .info-value{font-weight:900;font-size:17px;line-height:1.55;color:#3b2632}
+    .info-value small{display:block;color:#a04b53;font-size:12px;font-weight:600}
+    .note{font-size:12px;line-height:1.8;color:#795852;margin:19px 0 28px}
+    .rsvp{width:100%;border:3px solid #2e213e;border-radius:50px;background:#ef303f;color:white;font-weight:1000;letter-spacing:3px;font-size:19px;padding:18px 10px;box-shadow:0 7px 0 #ffc95c,0 12px 0 #2e213e;transition:transform .12s ease}
+    .rsvp:active{transform:translateY(5px);box-shadow:0 2px 0 #ffc95c,0 6px 0 #2e213e}
+    .little-line{text-align:center;margin-top:25px;color:#ab6266;font-weight:800;font-size:12px;letter-spacing:2px}
+    .foot-mark{text-align:center;font-size:12px;color:#a65a61;margin:55px auto 0;letter-spacing:3px}
+    .toast{position:fixed;left:50%;bottom:calc(env(safe-area-inset-bottom) + 32px);transform:translate(-50%,18px);opacity:0;pointer-events:none;z-index:110;background:#291f42ed;color:#fff9e8;padding:13px 18px;border-radius:14px;font-size:13px;line-height:1.5;text-align:center;max-width:min(90vw,420px);box-shadow:0 6px 28px #0007;transition:opacity .2s,transform .2s}
+    .toast.show{opacity:1;transform:translate(-50%,0)}
+    .confetti{position:fixed;z-index:105;width:9px;height:18px;top:50%;left:50%;pointer-events:none;animation:confetti .95s cubic-bezier(.12,.8,.5,1) forwards;transform:translate(-50%,-50%);background:var(--c)}
+    @keyframes confetti{to{transform:translate(calc(-50% + var(--tx)),calc(-50% + var(--ty))) rotate(720deg);opacity:0}}
+    @media(max-height:730px){.major-title{font-size:clamp(64px,16vw,94px)}.hero-zone{top:27%;width:125%;left:-12%}.cover-bottom{padding-top:38vh}.cover-caption{margin-top:15px}.birthday-burst{top:130px;width:95px;height:95px}}
+    @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important}}
+  </style>
+</head>
+<body>
+  <!-- 公开网络发布后，微信可以直接打开页面；BGM已内置在 assets/bgm.mp3。 -->
+  <main class="page">
+    <div class="petal-layer" id="petals" aria-hidden="true"></div>
+    <button class="music" id="musicButton" type="button" aria-label="播放或暂停背景音乐">
+      <span class="music-disc">♫</span><span id="musicLabel">开启战歌</span>
+    </button>
+    <audio id="bgm" loop preload="metadata" playsinline webkit-playsinline>
+      <source src="assets/bgm.mp3" type="audio/mpeg" />
+    </audio>
+
+    <section class="cover" id="cover">
+      <div class="sky"></div><div class="flare"></div><div class="grain"></div>
+      <header class="cover-top">
+        <div class="strap">★ 宇宙级重大喜讯 ★</div>
+        <div class="serial">EXCLUSIVE INVITATION · 2026</div>
+        <h1 class="major-title"><span>我过</span><span>生日!</span></h1>
+      </header>
+      <div class="birthday-burst">闪亮<br/>登场!</div>
+      <div class="hero-zone"><img src="assets/hero.png" alt="银色英雄挥出大拳头，热情发出生日宴邀请" /></div>
+      <div class="vertical">THE NEW LIGHT HAS APPEARED</div>
+      <div class="cover-bottom">
+        <div class="vip"><small>本次宴会 · 指定尊贵嘉宾</small>婷少 · 丁总 · 亨总</div>
+        <p class="cover-caption">隆重邀请各位参加<br><strong>徽菜品鉴大会暨我的生日宴会</strong></p>
+        <button type="button" id="scrollBtn" class="scroll-cta">↓ 开启邀请函 · 播放BGM ↓</button>
+      </div>
+    </section>
+
+    <section class="detail" id="invitation">
+      <div class="stamp">特邀函</div>
+      <h2>三位贵宾，<br><em>请给个面子！</em></h2>
+      <p class="intro">本人即将迎来生日，特此郑重邀请<strong>婷少、丁总、亨总</strong>，于<strong>本周日中午</strong>，共同见证一场意义非凡的聚餐。</p>
+      <div class="detail-divider"></div>
+      <div class="event-card">
+        <div class="card-kicker">✦ TODAY'S BIG EVENT / 隆 重 举 行</div>
+        <h3>徽菜品鉴大会<br><span>暨我的生日宴会</span></h3>
+        <div class="info-row">
+          <span class="info-label">时间</span>
+          <div class="info-value">2026年11月22日 · 周日<small>中午 12:00（本周日）</small></div>
+        </div>
+        <div class="info-row">
+          <span class="info-label">贵宾</span>
+          <div class="info-value">婷少 / 丁总 / 亨总</div>
+        </div>
+        <div class="info-row">
+          <span class="info-label">地点</span>
+          <div class="info-value">群内另行通知<small>准确地点由寿星统一公布</small></div>
+        </div>
+      </div>
+      <p class="note">🎵 本场指定BGM：《雨爱》（司凤动感版）<br>点「查阅正式邀请函」即可同时开启音乐，右上角可暂停或继续播放。</p>
+      <button type="button" class="rsvp" id="rsvpBtn">🌹 本总准时驾到！</button>
+      <div class="little-line">点击可复制回复，回微信发送给寿星</div>
+      <div class="foot-mark">✦ 这顿徽菜 · 你们必须到场 ✦</div>
+    </section>
+  </main>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script>
+    (function(){
+      'use strict';
+      const petals=document.getElementById('petals');
+      // 红到发光、略显土气的玫瑰花瓣：纯 SVG + CSS，无需加载第三方动效库。
+      const petalSVG=`<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><defs><linearGradient id="rg" x1=".05" y1=".04" x2=".95" y2="1"><stop offset="0" stop-color="#fc9e9b"/><stop offset=".18" stop-color="#f62d39"/><stop offset=".58" stop-color="#d70924"/><stop offset="1" stop-color="#87051d"/></linearGradient></defs><path d="M53 96 C36 82 21 88 11 68 C0 50 7 25 24 14 C37 3 48 11 60 8 C79 -1 99 24 90 53 C83 71 69 84 53 96 Z" fill="url(#rg)" stroke="#a80720" stroke-width=".85"/><path d="M53 93 Q41 64 28 38 M53 93 Q63 62 77 36 M21 25 Q39 17 59 17" fill="none" stroke="#ff8b8f" stroke-width=".85" opacity=".21"/><path d="M11 45 Q14 19 37 12" fill="none" stroke="#ffb3a3" stroke-width="2" opacity=".45"/></svg>`;
+      for(let i=0;i<31;i++){
+        const el=document.createElement('div'); el.className='petal';
+        const size=(26+Math.random()*93).toFixed(0)+'px';
+        el.style.setProperty('--x',(Math.random()*102-1).toFixed(2)+'%');
+        el.style.setProperty('--size',size);
+        el.style.setProperty('--dur',(7+Math.random()*9).toFixed(2)+'s');
+        el.style.setProperty('--delay',(-Math.random()*19).toFixed(2)+'s');
+        el.style.setProperty('--opacity',(.63+Math.random()*.37).toFixed(2));
+        el.innerHTML=petalSVG.replaceAll('id="rg"','id="rg'+i+'"').replace('url(#rg)','url(#rg'+i+')');
+        petals.appendChild(el);
+      }
+      const toast=document.getElementById('toast');let toastTimer;
+      function tell(s){toast.textContent=s;toast.classList.add('show');clearTimeout(toastTimer);toastTimer=setTimeout(()=>toast.classList.remove('show'),3500)}
+      const audio=document.getElementById('bgm');
+      const musicButton=document.getElementById('musicButton');
+      const musicLabel=document.getElementById('musicLabel');
+      function syncMusicButton(){
+        const playing=!audio.paused && !audio.ended;
+        musicButton.classList.toggle('is-playing',playing);
+        musicLabel.textContent=playing?'战歌播放中':'开启战歌';
+      }
+      function startMusic(){
+        if(!audio.paused) return;
+        try {
+          const playing=audio.play();
+          if(playing && typeof playing.catch==='function') {
+            playing.then(syncMusicButton).catch(()=>{
+              syncMusicButton();tell('微信可能限制自动播放，请点击右上角「开启战歌」重试');
+            });
+          } else { syncMusicButton(); }
+        } catch(e) { syncMusicButton();tell('请点击右上角「开启战歌」播放音乐'); }
+      }
+      // iOS/微信通过用户真实点击播放最可靠：首次打开邀请函时启动BGM。
+      document.getElementById('scrollBtn').addEventListener('click',()=>{
+        startMusic();
+        document.getElementById('invitation').scrollIntoView({behavior:'smooth'});
+      });
+      musicButton.addEventListener('click',()=>{
+        if(audio.paused){startMusic();}else{audio.pause();syncMusicButton();}
+      });
+      ['play','playing','pause','ended'].forEach(ev=>audio.addEventListener(ev,syncMusicButton));
+      audio.addEventListener('error',()=>{syncMusicButton();tell('音乐加载失败，请检查网页文件是否完整上传');});
+      const reply='本总已收到邀请！11月22日（本周日）中午，徽菜品鉴大会暨你的生日宴会，准时驾到！🌹';
+      function confetti(){const cs=['#ff2c44','#ffe173','#ff9bae','#5867e5','#ffffff'];for(let i=0;i<45;i++){
+        const c=document.createElement('i');c.className='confetti';c.style.setProperty('--c',cs[i%cs.length]);c.style.setProperty('--tx',(Math.random()*400-200)+'px');c.style.setProperty('--ty',(Math.random()*-520+60)+'px');c.style.animationDelay=(Math.random()*.24)+'s';document.body.appendChild(c);setTimeout(()=>c.remove(),1400);
+      }}
+      async function copyText(s){if(navigator.clipboard && window.isSecureContext){try{await Promise.race([navigator.clipboard.writeText(s),new Promise((_,reject)=>setTimeout(()=>reject(new Error('clipboard timeout')),1300))]);return true;}catch(e){}}
+        const ta=document.createElement('textarea');ta.value=s;ta.style.position='fixed';ta.style.opacity='0';document.body.appendChild(ta);ta.select();let ok=false;try{ok=document.execCommand('copy')}catch(e){}ta.remove();return ok;}
+      document.getElementById('rsvpBtn').addEventListener('click',async()=>{confetti();const ok=await copyText(reply);tell(ok?'已复制赴宴回复！返回微信聊天粘贴发送即可 🌹':'生日快乐！请回微信回复：本总准时驾到！ 🌹');});
+    })();
+  </script>
+</body>
+</html>
