@@ -89,7 +89,7 @@
     <button class="music" id="musicButton" type="button" aria-label="播放或暂停背景音乐">
       <span class="music-disc">♫</span><span id="musicLabel">开启战歌</span>
     </button>
-    <audio id="bgm" loop preload="metadata" playsinline webkit-playsinline>
+        <audio id="bgm" loop preload="auto" playsinline webkit-playsinline muted autoplay>
       <source src="assets/bgm.mp3" type="audio/mpeg" />
     </audio>
 
@@ -158,35 +158,55 @@
       }
       const toast=document.getElementById('toast');let toastTimer;
       function tell(s){toast.textContent=s;toast.classList.add('show');clearTimeout(toastTimer);toastTimer=setTimeout(()=>toast.classList.remove('show'),3500)}
-      const audio=document.getElementById('bgm');
+            const audio=document.getElementById('bgm');
       const musicButton=document.getElementById('musicButton');
       const musicLabel=document.getElementById('musicLabel');
+
       function syncMusicButton(){
         const playing=!audio.paused && !audio.ended;
         musicButton.classList.toggle('is-playing',playing);
         musicLabel.textContent=playing?'战歌播放中':'开启战歌';
       }
-      function startMusic(){
-        if(!audio.paused) return;
-        try {
-          const playing=audio.play();
-          if(playing && typeof playing.catch==='function') {
-            playing.then(syncMusicButton).catch(()=>{
-              syncMusicButton();tell('微信可能限制自动播放，请点击右上角「开启战歌」重试');
-            });
-          } else { syncMusicButton(); }
-        } catch(e) { syncMusicButton();tell('请点击右上角「开启战歌」播放音乐'); }
+
+      function unlockAndPlay(){
+        audio.muted=false;
+        const p=audio.play();
+        if(p && typeof p.catch==='function'){
+          p.then(syncMusicButton).catch(()=>{
+            syncMusicButton();
+            tell('请点击右上角「开启战歌」手动播放音乐');
+          });
+        }else{
+          syncMusicButton();
+        }
       }
-      // iOS/微信通过用户真实点击播放最可靠：首次打开邀请函时启动BGM。
-      document.getElementById('scrollBtn').addEventListener('click',()=>{
-        startMusic();
-        document.getElementById('invitation').scrollIntoView({behavior:'smooth'});
+
+      (function setupUnlock(){
+        const events=['click','touchstart','keydown'];
+        const handler=()=>{
+          unlockAndPlay();
+          events.forEach(ev=>document.removeEventListener(ev,handler));
+        };
+        events.forEach(ev=>document.addEventListener(ev,handler,{once:true,passive:true}));
+      })();
+
+      musicButton.addEventListener('click',(e)=>{
+        e.stopPropagation();
+        if(audio.paused){
+          unlockAndPlay();
+        }else{
+          audio.pause();
+          syncMusicButton();
+        }
       });
-      musicButton.addEventListener('click',()=>{
-        if(audio.paused){startMusic();}else{audio.pause();syncMusicButton();}
-      });
+
       ['play','playing','pause','ended'].forEach(ev=>audio.addEventListener(ev,syncMusicButton));
       audio.addEventListener('error',()=>{syncMusicButton();tell('音乐加载失败，请检查网页文件是否完整上传');});
+
+      document.getElementById('scrollBtn').addEventListener('click',()=>{
+        unlockAndPlay();
+        document.getElementById('invitation').scrollIntoView({behavior:'smooth'});
+      });
       const reply='本总已收到邀请！11月22日（本周日）中午，徽菜品鉴大会暨你的生日宴会，准时驾到！🌹';
       function confetti(){const cs=['#ff2c44','#ffe173','#ff9bae','#5867e5','#ffffff'];for(let i=0;i<45;i++){
         const c=document.createElement('i');c.className='confetti';c.style.setProperty('--c',cs[i%cs.length]);c.style.setProperty('--tx',(Math.random()*400-200)+'px');c.style.setProperty('--ty',(Math.random()*-520+60)+'px');c.style.animationDelay=(Math.random()*.24)+'s';document.body.appendChild(c);setTimeout(()=>c.remove(),1400);
